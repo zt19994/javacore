@@ -35,6 +35,7 @@ public class CountLongWords {
         //注意文件路径是绝对路径
         String contents = new String(Files.readAllBytes(Paths.get("F:\\develop\\javacore\\src\\txtfile\\first.txt")));
 
+        // \\PL+是匹配非字符
         List<String> words = Arrays.asList(contents.split("\\PL+"));
 
         //迭代操作
