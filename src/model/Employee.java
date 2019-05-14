@@ -8,6 +8,10 @@ import java.time.LocalDate;
  * @author zt1994 2019/5/13 21:39
  */
 public class Employee {
+
+    public static final int NAME_SIZE = 40;
+    public static final int RECORD_SIZE = 2 * NAME_SIZE + 8 + 4 + 4 + 4;
+
     /**
      * 姓名
      */
@@ -22,6 +26,9 @@ public class Employee {
      * 雇用时间
      */
     private LocalDate hireDay;
+
+    public Employee() {
+    }
 
     public Employee(String n, double s, int year, int month, int day) {
         name = n;
