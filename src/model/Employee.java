@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -7,7 +8,7 @@ import java.time.LocalDate;
  *
  * @author zt1994 2019/5/13 21:39
  */
-public class Employee {
+public class Employee implements Serializable {
 
     public static final int NAME_SIZE = 40;
     public static final int RECORD_SIZE = 2 * NAME_SIZE + 8 + 4 + 4 + 4;
@@ -48,6 +49,11 @@ public class Employee {
         return hireDay;
     }
 
+    /**
+     * 按比例涨工资
+     *
+     * @param byPercent 涨幅比例
+     */
     public void raiseSalary(double byPercent) {
         double raise = salary * byPercent / 100;
         salary += raise;
