@@ -8,6 +8,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -34,13 +35,13 @@ public class JSONConverter {
             filename = args[0];
         }
         // 1、要读入一个XML文档，首先需要一个DocumentBuilder对象，从DocumentBuilderFactory中获取
-        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newDefaultInstance();
-        DocumentBuilder builder = builderFactory.newDocumentBuilder();
+        //DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newDefaultInstance();
+        //DocumentBuilder builder = builderFactory.newDocumentBuilder();
 
-        Document document = builder.parse(filename);
+        //Document document = builder.parse(filename);
         // document.getDocumentElement() 获取根元素
-        Element root = document.getDocumentElement();
-        System.out.println(convert(root, 0));
+        //Element root = document.getDocumentElement();
+        //System.out.println(convert(root, 0));
     }
 
 
@@ -65,8 +66,9 @@ public class JSONConverter {
     /**
      * 替换MAP
      */
-    private static Map<Character, String> replacements = Map.of('\b', "\b", '\f', "\\f", '\n', "\\n",
-            '\r', "\\r", '\t', "\\t", '"', "\\\"", '\\', "\\\\");
+    //Map.of('\b', "\b", '\f', "\\f", '\n', "\\n", '\r', "\\r", '\t', "\\t", '"', "\\\"", '\\', "\\\\");
+    private static Map<Character, String> replacements = new HashMap<>();
+
 
 
     /**
